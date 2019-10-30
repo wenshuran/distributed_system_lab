@@ -1,0 +1,38 @@
+version: '3'
+#networks:
+#  default:
+#    external:
+#      name: mynet
+services:
+  register:
+    image: "register:latest"
+  broker:
+    image: "broker:latest"
+    depends_on:
+      - register
+  auldfellas:
+    image: "auldfellas:latest"
+    depends_on:
+      - register
+      - broker
+  dodgydrivers:
+    image: "dodgydrivers:latest"
+    depends_on:
+      - register
+      - broker
+  girlpower:
+    image: "girlpower:latest"
+    depends_on:
+      - register
+      - broker
+  client:
+    image: "client:latest"
+#    links:
+#      - broker
+    depends_on:
+      - register
+      - auldfellas
+      - dodgydrivers
+      - girlpower
+
+

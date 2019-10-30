@@ -1,0 +1,37 @@
+version: '3'
+#networks:
+#  default:
+#    external:
+#      name: mynet
+services:
+  broker:
+    image: "broker:latest"
+    ports:
+      - "9000:9000"
+    expose:
+      - 9000
+  auldfellas:
+    image: "auldfellas:latest"
+    depends_on:
+      - broker
+    ports:
+      - "9001:9001"
+    expose:
+      - 9001
+  dodgydrivers:
+    image: "dodgydrivers:latest"
+    depends_on:
+      - broker
+    ports:
+      - "9002:9002"
+    expose:
+      - 9002
+  girlpower:
+    image: "girlpower:latest"
+    depends_on:
+      - broker
+    ports:
+      - "9003:9003"
+    expose:
+      - 9003
+

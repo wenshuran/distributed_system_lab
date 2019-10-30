@@ -1,0 +1,6 @@
+service\core\AbstractQuotationService.class
+service\core\ClientApplication.class
+service\core\Quotation.class
+service\core\NoSuchQuotationException.class
+service\core\Constants.class
+service\core\ClientInfo.class
